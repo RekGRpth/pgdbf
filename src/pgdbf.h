@@ -266,6 +266,7 @@ static void safeprintbuf(const char *buf, const size_t inputsize, const int trim
 
     /* Shortcut for empty strings */
     if(*buf == '\0') {
+        printf("\\N");
         return;
     }
 
@@ -280,6 +281,7 @@ static void safeprintbuf(const char *buf, const size_t inputsize, const int trim
 
         /* If there aren't any non-space characters, skip the output part */
         if(s < buf) {
+            printf("\\N");
             return;
         }
     }
