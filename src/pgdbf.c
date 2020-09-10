@@ -529,7 +529,13 @@ int main(int argc, char **argv) {
      * for a few additional output parameters.  This is an ugly loop that
      * does lots of stuff, but extracting it into two or more loops with the
      * same structure and the same switch-case block seemed even worse. */
-    if(optusecreatetable) printf("CREATE TABLE %s (", baretablename);
+    if(optusecreatetable) {
+        printf("CREATE TABLE");
+        if(optuseifexists) {
+            printf(" IF NOT EXISTS");
+        }
+        printf(" %s (", baretablename);
+    }
     printed = 0;
     for(fieldnum = 0; fieldnum < fieldcount; fieldnum++) {
         if(optignorefields){
