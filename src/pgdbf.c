@@ -530,7 +530,7 @@ int main(int argc, char **argv) {
      * does lots of stuff, but extracting it into two or more loops with the
      * same structure and the same switch-case block seemed even worse. */
     if(optusecreatetable) {
-        printf("CREATE TABLE");
+        printf("CREATE UNLOGGED TABLE");
         if(optuseifexists) {
             printf(" IF NOT EXISTS");
         }
